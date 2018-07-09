@@ -80,4 +80,16 @@ public class Channel implements Serializable {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    @Override
+    public String toString() {
+        return "Channel{" +
+                "id=" + id +
+                ", categoryId=" + categoryId +
+                ", name='" + name + '\'' +
+                ", sourcePath='" + sourcePath + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", detail='" + detail + '\'' +
+                '}';
+    }
 }

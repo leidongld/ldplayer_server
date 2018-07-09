@@ -11,11 +11,13 @@ public class Music implements Serializable {
     @GeneratedValue
     private int id;
 
-    private boolean isLocal;
+    private int isLocal;
 
     private String name;
 
     private String artist;
+
+    private int artistId;
 
     private String album;
 
@@ -30,11 +32,12 @@ public class Music implements Serializable {
     public Music() {
     }
 
-    public Music(int id, boolean isLocal, String name, String artist, String album, String path, float duration, long size, String imagePath) {
+    public Music(int id, int isLocal, String name, String artist,int artistId, String album, String path, float duration, long size, String imagePath) {
         this.id = id;
         this.isLocal = isLocal;
         this.name = name;
         this.artist = artist;
+        this.artistId = artistId;
         this.album = album;
         this.path = path;
         this.duration = duration;
@@ -50,11 +53,11 @@ public class Music implements Serializable {
         this.id = id;
     }
 
-    public boolean isLocal() {
+    public int isLocal() {
         return isLocal;
     }
 
-    public void setLocal(boolean local) {
+    public void setLocal(int local) {
         isLocal = local;
     }
 
@@ -72,6 +75,14 @@ public class Music implements Serializable {
 
     public void setArtist(String artist) {
         this.artist = artist;
+    }
+
+    public int getArtistId() {
+        return artistId;
+    }
+
+    public void setArtistId(int artistId) {
+        this.artistId = artistId;
     }
 
     public String getAlbum() {
@@ -112,5 +123,21 @@ public class Music implements Serializable {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "id=" + id +
+                ", isLocal=" + isLocal +
+                ", name='" + name + '\'' +
+                ", artist='" + artist + '\'' +
+                ", artistId=" + artistId +
+                ", album='" + album + '\'' +
+                ", path='" + path + '\'' +
+                ", duration=" + duration +
+                ", size=" + size +
+                ", imagePath='" + imagePath + '\'' +
+                '}';
     }
 }
