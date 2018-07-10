@@ -36,9 +36,9 @@ public class BannController {
     public List<Bann> getBannerList(@PathVariable("categoryId") Integer categoryId) {
         List<Bann> bannerList = iBannRespository.findAll();
         List<Bann> resList = new ArrayList<>();
-        for (Bann aBannerList : bannerList) {
-            if (aBannerList.getCategoryId() == categoryId) {
-                resList.add(aBannerList);
+        for (Bann banner : bannerList) {
+            if (banner.getCategoryId() == categoryId) {
+                resList.add(banner);
             }
         }
         return resList;
