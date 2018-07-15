@@ -29,10 +29,14 @@ public class Video implements Serializable {
 
     private String imagePath;
 
+    private int stars;
+
+    private String detail;
+
     public Video() {
     }
 
-    public Video(int id, int isLocal,int themeId, String name,String path, String resolution, long size, long duration, long date, String imagePath) {
+    public Video(int id, int isLocal, int themeId, String name, String path, String resolution, long size, long duration, long date, String imagePath, int stars, String detail) {
         this.id = id;
         this.isLocal = isLocal;
         this.themeId = themeId;
@@ -43,6 +47,8 @@ public class Video implements Serializable {
         this.duration = duration;
         this.date = date;
         this.imagePath = imagePath;
+        this.stars = stars;
+        this.detail = detail;
     }
 
     public int getId() {
@@ -51,14 +57,6 @@ public class Video implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int isLocal() {
-        return isLocal;
-    }
-
-    public void setLocal(int local) {
-        isLocal = local;
     }
 
     public int getThemeId() {
@@ -125,6 +123,30 @@ public class Video implements Serializable {
         this.imagePath = imagePath;
     }
 
+    public int getIsLocal() {
+        return isLocal;
+    }
+
+    public void setIsLocal(int isLocal) {
+        this.isLocal = isLocal;
+    }
+
+    public int getStars() {
+        return stars;
+    }
+
+    public void setStars(int stars) {
+        this.stars = stars;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
     @Override
     public String toString() {
         return "Video{" +
@@ -138,6 +160,8 @@ public class Video implements Serializable {
                 ", duration=" + duration +
                 ", date=" + date +
                 ", imagePath='" + imagePath + '\'' +
+                ", stars=" + stars +
+                ", detail='" + detail + '\'' +
                 '}';
     }
 }
